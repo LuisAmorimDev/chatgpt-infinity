@@ -168,7 +168,7 @@
                 chatgpt.send('Generate a single random Q&A'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                     + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
-                    + '. Don\'t type anything else.')
+                    + '. Don\'t type anything else.' + config.textFormat ? config.textFormat : '' )
             }, 500))
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
