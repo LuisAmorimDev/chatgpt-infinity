@@ -12,6 +12,7 @@
     const replyLangDiv = menuItems[3], replyLangLabel = replyLangDiv.querySelector('span')
     const replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span')
     const replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
+    const replyTextFormatDiv = menuItems[6], replyTextFormatDiv = replyTextFormatDiv.querySelector('span')
 
     // Sync toggle states
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
@@ -27,6 +28,7 @@
                 + ( re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
                                                     : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
+            replyTextFormatDiv.innerText += ` — ${ config.replyTextFormat }s`
             updateGreyness()
         })
 
